@@ -42,13 +42,11 @@ def make_dictionary():
     with open(csvFile, encoding="utf-8") as f:
         csvReader = list(csv.DictReader(f))
         for rows in csvReader:
-            key = rows["grp_id"]
-            dictionary[key] = (
-                rows["member_1"],
-                rows["member_2"],
-                rows["member_3"],
-                rows["member_4"],
-            )
+            team = "team " + str(rows["grp_id"])
+            dictionary[rows["member_1"]] = team
+            dictionary[rows["member_2"]] = team
+            dictionary[rows["member_3"]] = team
+            dictionary[rows["member_4"]] = team
     return dictionary
 
 
@@ -71,5 +69,4 @@ async def assign_all(ctx):
 
 
 if __name__ == "__main__":
-    # bot.run(TOKEN)
-    print(make_dictionary())
+    bot.run(TOKEN)
