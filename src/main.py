@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-import pandas as pd
+import csv
 from dotenv import load_dotenv
 import os
 
@@ -37,16 +37,18 @@ def member_list(ctx):
 
 
 def make_dictionary():
-    col_list = ["grp_id", "member_1", "member_2", "member_3", "member_4"]
-    df = pd.read_csv("bro.csv", usecols=col_list)  # Extracts required columns from csv
+    csvFile = "data/participants.csv"
     dictionary = {}
-    for i in range(len(df)):  # Makes discord ID and team number key value pair
-        id = df["grp_id"][i]
-        id = "team " + str(id)
-        dictionary[df["member_1"][i]] = id
-        dictionary[df["member_2"][i]] = id
-        dictionary[df["member_3"][i]] = id
-        dictionary[df["member_4"][i]] = id
+    with open(csvFile, encoding="utf-8") as f:
+        csvReader = list(csv.DictReader(f))
+        for rows in csvReader:
+            key = rows["grp_id"]
+            dictionary[key] = (
+                rows["member_1"],
+                rows["member_2"],
+                rows["member_3"],
+                rows["member_4"],
+            )
     return dictionary
 
 
@@ -68,4 +70,6 @@ async def assign_all(ctx):
     await ctx.send("Done!")
 
 
-bot.run(TOKEN)
+if __name__ == "__main__":
+    # bot.run(TOKEN)
+    print(make_dictionary())
