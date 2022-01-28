@@ -43,10 +43,9 @@ def make_dictionary():
         csvReader = list(csv.DictReader(f))
         for rows in csvReader:
             team = "team " + str(rows["grp_id"])
-            dictionary[rows["member_1"]] = team
-            dictionary[rows["member_2"]] = team
-            dictionary[rows["member_3"]] = team
-            dictionary[rows["member_4"]] = team
+            for i in range(1, 5):
+                if rows[f"member_{i}"] != "":
+                    dictionary[rows[f"member_{i}"]] = team
     return dictionary
 
 
