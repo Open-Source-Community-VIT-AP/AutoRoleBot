@@ -57,6 +57,7 @@ async def assign_all(ctx):
                 temp =[]
                 temp.append(member)
                 missing_list.append(temp)
+            await ctx.send("Done!")
 
 
 @bot.command(name="left" , pass_context=True)
