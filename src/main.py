@@ -49,8 +49,8 @@ def make_dictionary():
     return dictionary
 
 
-@bot.command(name="roles", pass_context=True)
-@commands.has_role("Server Admin")  # Making sure only admin can run the command
+@bot.command(name="addroles", pass_context=True)
+@commands.has_role("AutoRole Admin")  # Making sure only admin can run the command
 async def assign_all(ctx):
     async with ctx.typing():  # Typing animation
         memberlist, member_dictionary = member_list(ctx)  # Getting the the information
@@ -73,8 +73,8 @@ async def assign_all(ctx):
             await ctx.send("Done!")
 
 
-@bot.command(name="left", pass_context=True)
-@commands.has_role("Server Admin")
+@bot.command(name="usersleft", pass_context=True)
+@commands.has_role("AutoRole Admin")
 async def missing(ctx):
     fields = [
         "DISCORD ID OF MISSING PEOPLE",
