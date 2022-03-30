@@ -28,13 +28,13 @@
 
 ## Motivation
 
-Over the last few years of event management on an online medium, Discord was our go to platform for ease of communication with the participants.
-However, it was taxing to assign roles for each member of a team for each event. Especially when the event is large like WebHunt with over 200+ Participants. \
-And so, we decided to create a bot that would automate the task of providing dedicated roles to team members.
+Over the last few years of event management on an online medium, Discord has been our go to platform for ease of communication with the participants.
+However, it has become very taxing to assign roles for each member of a team for every event. Especially when the events are large, like WebHunt with over 200+ Participants. \
+And so, we decided to create a bot that would automate the task of providing roles to participants on the Discord sever.
 
 ## Installation
 
-For the latest stable version, head to [Releases](https://github.com/Open-Source-Community-VIT-AP/AutoRoleBot/releases).
+For the latest stable version, head over to [Releases](https://github.com/Open-Source-Community-VIT-AP/AutoRoleBot/releases).
 
 Download and extract the source code.
 
@@ -44,14 +44,14 @@ As an alternative, you could also clone the repository using,
 git clone https://github.com/Open-Source-Community-VIT-AP/AutoRoleBot
 </pre>
 
-Once you have the source code, create a virtual environment using the following command,
+Once you have the source code, create a **virtual environment** using the following command,
 `python3 -m venv venv`
 
-Enter the virtual environment using `venv/Scripts/Activate on your terminal`
+Enter the virtual environment using `venv/Scripts/Activate` on your terminal
 
-Once you are inside the virtual environment install dependancies using `pip install -r requirements.txt`.
+Once you are inside the virtual environment **install dependancies** using `pip install -r requirements.txt`.
 
-Finally, create a discord token. For more information, checkout this article https://www.writebots.com/discord-bot-token/.
+Finally, create a discord token and add it to the `.env file` Check `.env.example` for variable names. For more information, checkout this article https://www.writebots.com/discord-bot-token/.
 
 You are all set to start using the application now.
 
@@ -61,16 +61,16 @@ You are all set to start using the application now.
 
 To launch the file, use the following command, `python3 main.py` inside the `src` file.
 
-Once the bot is online on your discord server, you are all set to use it's various commands on the server.
+Once the bot is online on your discord server, you can use all of it's various commands on the server.
 
-** Note: ** Make sure to create a role called `AutoRole Admin` and assign it to the people who will be using the bot.
+**Note:** Make sure to create a role called `AutoRole Admin` and assign it to the people who will be using the bot.
 
 Setup your `participants.csv` file in the `data` folder. Make sure to follow the exact same format as the example file.
 
 ### Various bot commands
 
--   `==addrole` - Adds roles to all the users present in the `participants.csv` file and joined the Discord Server.
--   `==usersleft` - Provides you a list of users that are yet to join the Discord server.
+-   `==addrole` : Adds roles to all the users present in the `participants.csv` file and joined the Discord Server.
+-   `==usersleft` : Provides you a list of users that are yet to join the Discord server.
 
 ## Contributing
 
